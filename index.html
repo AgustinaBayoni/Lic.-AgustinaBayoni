@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lic. Agustina Bayoni</title>
+        <link rel="icon" href="assets/logo.png" type="image/png">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    </head>
+    
+    
+<body>
+    <!-- Header con ID "home" -->
+    <header class="full-screen-header" id="home">
+        <nav id="navbar">
+            <!-- Botón de menú hamburguesa -->
+            <div id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="Logo" class="logo">
+                <span>Lic. Agustina Bayoni</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Quién Soy</a></li>
+                <li><a href="#proposals">Propuesta</a></li>
+                <li><a href="#therapies">Terapias</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-content">
+            <h1>Lic. Agustina Bayoni</h1>
+            <p class="subtitle">Psicóloga Clínica Infantojuvenil</p>
+            <a href="#about" class="cta-button">Conoceme</a> <!-- Botón enlazado a la sección "Sobre mí" -->
+        </div>
+    </header>
+
+    <!-- Sección "Sobre mí" -->
+    <section id="about" class="about-section">
+        <!-- Título como imagen -->
+        <div class="about-title">
+            <img src="assets/Sobre mi.jpg" alt="Un poco sobre mí">
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Mi nombre es Agustina Bayoni, soy Licenciada en Psicología egresada de la Universidad del Salvador (M.N. 82037).</p>
+                <p>Me desempeño en el área clínica asistencial de niños y adolescentes, bajo la orientación teórica del Psicoanálisis Relacional. Ofrezco sesiones presenciales para niños en el barrio de Caballito (CABA), y también atiendo a adolescentes a través de modalidad virtual.</p>
+            </div>
+            <!-- Imagen de Agustina Bayoni -->
+            <div class="about-photo-container">
+                <img src="assets/agus.jpg" alt="Foto de Agustina Bayoni" class="about-photo">
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Sección Propuesta -->
+    <section id="proposals" class="proposals-section">
+        <div class="proposals-container">
+            <div class="proposals-title">
+                <img src="assets/propuesta-titulo.jpg" alt="Propuesta" class="proposals-title-image">
+            </div>
+            <div class="proposals-text">
+                <p>
+                    Desde la perspectiva del <span class="highlight">psicoanálisis relacional</span>, ya no se considera la mente como una <span class="highlight">entidad aislada</span>, sino que se entiende como una <span class="highlight">red compleja de relaciones</span> establecidas entre cada persona y su entorno.
+                </p>
+                <p>
+                    Estas relaciones pueden ser <span class="highlight">conscientes</span> o <span class="highlight">inconscientes</span>, y configuran nuestras <span class="highlight">emociones</span>, <span class="highlight">pensamientos</span> e <span class="highlight">identidad</span>. En este contexto, el trabajo terapéutico se ocupa de intervenir desde una <span class="highlight">mirada relacional</span>, concibiendo el vínculo con el <span class="highlight">terapeuta</span> como una herramienta fundamental para la <span class="highlight">promoción del cambio</span>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+            <!-- Sección Terapias -->
+        <section id="therapies" class="therapies-section">
+            <div class="therapies-title">
+                <img src="assets/terapias-titulo.jpg" alt="Terapias" class="therapies-title-image">
+            </div>
+            <div class="therapies-container">
+                <!-- Terapia para niños -->
+                <div class="therapy-card">
+                    <img src="assets/terapia-ninos.jpg" alt="Terapia con niños" class="therapy-image">
+                    <h3>Terapia individual con Niños</h3>
+                    <p>
+                        La terapia individual presencial con niños tiene por objeto identificar, comprender y abordar las necesidades emocionales y psicológicas de los niños, en el contexto de un entorno seguro, mediante el empleo de diferentes técnicas lúdicas como actividades gráficas, tareas creativas, lecturas y juegos que permitan la expresión emocional. 
+                    </p>
+                </div>
+                <!-- Terapia para adolescentes -->
+                <div class="therapy-card">
+                    <img src="assets/terapia-adolescentes.jpg" alt="Terapia con adolescentes" class="therapy-image">
+                    <h3>Terapia individual con Adolescentes</h3>
+                    <p>
+                        La terapia individual virtual con adolescentes procura crear un entorno seguro y de confianza, en el que los adolescentes pueden explorar, compartir y comprender sus sentimientos, pensamientos y experiencias, e incorporar herramientas que facilitan un desarrollo emocional y social saludable.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    <!-- Sección Contacto -->
+    <section id="contact" class="contact-section">
+        <div class="contact-title">
+            <img src="assets/contacto-titulo.jpg" alt="Contacto" class="contact-title-image">
+        </div>
+        <p class="contact-description">
+            Me gustaría escuchar tus consultas o inquietudes. No dudes en comunicarte. Estaré en contacto a la brevedad.
+        </p>
+        <div class="contact-details">
+            <!-- Correo -->
+            <div class="contact-item">
+                <img src="assets/mail-icon.png" alt="Email" class="contact-icon">
+                <p id="email">agussbayoni@gmail.com</p>
+                <button id="copy-email" class="copy-button" title="Copiar correo">
+                    <img src="assets/copy-icon.png" alt="Copiar" class="copy-icon">
+                </button>
+            </div>
+            <!-- WhatsApp -->
+            <div class="contact-item">
+                <a href="https://wa.me/5491134635784" target="_blank" class="whatsapp-link">
+                    <img src="assets/whatsapp-icon.png" alt="WhatsApp" class="contact-icon">
+                    <p>11 3463-5784</p>
+                </a>
+            </div>
+            <hr class="contact-divider">
+            <!-- Dirección -->
+            <div class="contact-item">
+                <img src="assets/location-icon.png" alt="Ubicación" class="contact-icon">
+                <p>Calle Miró entre Valle y Pedro Goyena - Caballito, CABA</p>
+                
+            </div>
+                    <!-- Mapa interactivo -->
+        <div id="map" class="interactive-map"></div>
+
+        </div>
+
+        
+    </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© Lic. Agustina Bayoni</p>
+            <div class="footer-divider"></div> <!-- Separador decorativo -->
+            <p>Design By: <a href="https://FedericoRosciani.github.io/PortfolioDeFedericoRosciani/" class="designer">Federico Rosciani</a></p>
+            <p>Todos los derechos reservados. | 2024</p>
+            <div class="footer-socials">
+                <a href="mailto:federicorosciani2003@hotmail.com" target="_blank" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.instagram.com/federosciani_/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/frosciani/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </footer>
+        
+        <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5491134635784" target="_blank" class="whatsapp-button" title="Envíame un mensaje en WhatsApp">
+        <img src="assets/whatsapp-icon.png" alt="WhatsApp">
+    </a>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,675 @@
+/* ==== RESET BÁSICO ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Manejo uniforme del modelo de caja */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente principal */
+    color: #333; /* Color de texto estándar */
+    background-color: #f4cccc; /* Fondo rosado */
+}
+
+main {
+    margin-top: 80px; /* Espacio superior igual a la altura del navbar */
+}
+
+/* ==== HEADER ==== */
+header {
+    background-image: url('assets/fondoHeader.jpg'); /* Imagen de fondo del header */
+    background-size: cover; /* Ajusta la imagen para cubrir todo */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Imagen fija para efecto parallax */
+    background-attachment: scroll; /* Permite que la imagen se ajuste dinámicamente */
+    height: 100vh; /* Ocupa toda la pantalla */
+    display: flex; /* Flexbox para alineación */
+    justify-content: flex-start; /* Contenido alineado a la izquierda */
+    align-items: center; /* Centrado vertical */
+    text-align: left; /* Texto alineado a la izquierda */
+    color: #341719; /* Color del texto */
+    position: relative; /* Posicionamiento relativo para contenido interno */
+}
+
+@media (max-width: 768px) {
+    header {
+        background-attachment: scroll; /* Elimina el efecto fijo en móviles */
+    }
+}
+
+.header-content {
+    max-width: 800px; /* Limita el ancho del contenido */
+    margin-left: 10%; /* Espaciado adicional desde la izquierda */
+}
+
+.header-content h1 {
+    font-size: 3.5rem; /* Tamaño grande del título */
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6); /* Sombra para destacar */
+}
+
+.header-content .subtitle {
+    font-size: 1.5rem; /* Tamaño del subtítulo */
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4); /* Sombra ligera */
+    color: #341719; /* Color del texto */
+}
+
+.header-content .cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3E2C2C; /* Color del texto */
+    text-decoration: none;
+    background-color: #e78d8d; /* Color de fondo */
+    border-radius: 25px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra del botón */
+    transition: all 0.3s ease; /* Efecto suave de hover */
+}
+
+.header-content .cta-button:hover {
+    background-color: #ffffff; /* Cambia el fondo en hover */
+    color: #3e2c2c; /* Cambia el color del texto en hover */
+    transform: scale(1.1); /* Agranda el botón */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+@media (max-width: 768px) {
+    header {
+        background-attachment: scroll;
+    }
+
+    .header-content h1 {
+        font-size: 2.5rem; /* Reduce el tamaño en móviles */
+    }
+
+    .header-content .subtitle {
+        font-size: 1.2rem; /* Subtítulo más pequeño */
+    }
+
+    .header-content .cta-button {
+        padding: 10px 20px; /* Botón más compacto */
+        font-size: 1rem;
+    }
+}
+
+/* ==== NAVEGACIÓN ==== */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    transition: background-color 0.3s ease; /* Transición suave */
+    z-index: 10; /* Se asegura que esté encima */
+}
+
+#navbar.transparent {
+    background-color: transparent; /* Fondo transparente */
+}
+
+#navbar.solid {
+    background-color: #eec0c0; /* Fondo sólido */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px; /* Tamaño del logo */
+    height: auto; /* Mantener proporción */
+}
+
+.nav-menu {
+    list-style: none; /* Elimina los puntos */
+    display: flex;
+    gap: 20px; /* Espaciado entre enlaces */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none; /* Sin subrayado */
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 1em;
+    transition: color 0.3s, border-bottom 0.3s; /* Transiciones suaves */
+    padding-bottom: 5px; /* Espacio bajo el texto */
+}
+
+.nav-menu li a:hover {
+    color: #080601; /* Color más oscuro en hover */
+    border-bottom: 2px solid #eec0c0; /* Subrayado en hover */
+}
+
+
+@media (max-width: 768px) {
+    /* Ajustar el contenedor del logo */
+    .logo-container {
+        flex-direction: column; /* Cambiar a disposición vertical */
+        align-items: center; /* Centrar horizontalmente */
+        text-align: center; /* Centrar el texto */
+        gap: 10px; /* Añadir espacio entre el logo y el texto */
+        width: 100%; /* Ocupa todo el ancho */
+        margin-bottom: 10px; /* Añadir espacio debajo del logo */
+    }
+
+    .logo-container img {
+        margin: 0 auto; /* Centrar el logo */
+    }
+
+    /* Ajustar el texto "Lic. Agustina Bayoni" */
+    .logo-container span {
+        font-size: 1.2rem; /* Ajustar tamaño del texto */
+        font-weight: bold; /* Asegurar que sea negrita */
+        color: #333; /* Color del texto */
+    }
+
+    /* Ajustar la barra de navegación */
+    #navbar {
+        flex-direction: column; /* Cambiar a disposición vertical */
+        align-items: center; /* Centrar el contenido */
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column; /* Menú vertical en móviles */
+        height: auto;
+        align-items: center;
+        padding: 15px 5%;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* ==== SECCIÓN "SOBRE MÍ" ==== */
+.about-section {
+    max-width: 1000px; /* Ancho máximo de la sección */
+    margin: 60px auto; /* Centrado con margen superior e inferior */
+    padding: 20px;
+    text-align: left; /* Texto alineado a la izquierda */
+    background-color: #f4cccc; /* Fondo rosado */
+    border-radius: 10px; /* Bordes redondeados */
+    display: flex; /* Flexbox para alinear el contenido */
+    flex-direction: column; /* Alineación vertical */
+    align-items: center; /* Centrado horizontal */
+}
+
+.about-title {
+    text-align: center; /* Centra el título */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.about-title img {
+    width: 230px; /* Tamaño del título en imagen */
+    height: auto; /* Mantener proporción */
+    margin-left: -770px; /* Ajuste de posición */
+}
+
+.about-content {
+    display: flex; /* Contenedor flexible */
+    align-items: flex-start; /* Alineación inicial */
+    gap: 20px; /* Espaciado entre texto e imagen */
+    text-align: left; /* Texto alineado a la izquierda */
+}
+
+.about-text {
+    flex: 2; /* El texto ocupa dos partes del espacio */
+    font-size: 1.35em; /* Tamaño del texto */
+    line-height: 1.8; /* Espaciado entre líneas */
+    color: #705151; /* Color del texto */
+    margin-right: 20px; /* Espaciado lateral */
+}
+
+.about-photo-container {
+    flex: 1; /* La imagen ocupa una parte */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+}
+
+.about-photo {
+    width: 280px; /* Tamaño de la imagen */
+    height: auto; /* Mantener proporción */
+    border-radius: 200px; /* Imagen circular */
+    border: 2px solid #eec0c0; /* Borde con color */
+    padding: 5px; /* Espaciado interno */
+    background-color: #f4cccc; /* Fondo del borde */
+}
+
+@media (max-width: 768px) {
+    .about-title img {
+        width: 80%; /* La imagen ocupará el 80% del ancho de la pantalla */
+        height: auto; /* Mantendrá la proporción */
+        margin: 0 auto; /* Centrada horizontalmente */
+    }
+
+    .about-title {
+        text-align: center; /* Centra el contenido */
+        margin-bottom: 20px; /* Espaciado inferior */
+    }
+}
+
+/* ==== SECCIÓN PROPUESTA ==== */
+.proposals-section {
+    background-color: #705151; /* Fondo marrón oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 60px 20px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+}
+
+.proposals-container {
+    max-width: 800px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+.proposals-title {
+    text-align: center; /* Centra el título */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.proposals-title img {
+    max-width: 300px; /* Tamaño máximo de la imagen */
+    height: auto; /* Mantener proporción */
+    display: block; /* Bloque para centrado */
+    margin: 0 auto; /* Centra la imagen */
+}
+
+.proposals-text {
+    font-size: 1.35em; /* Tamaño del texto */
+    line-height: 1.5; /* Espaciado entre líneas */
+    color: #ffffff; /* Texto blanco */
+}
+
+.proposals-text .highlight {
+    color: #eec0c0; /* Color destacado */
+    font-weight: bold; /* Negrita para énfasis */
+}
+
+/* ==== SECCIÓN "TERAPIAS" ==== */
+.therapies-section {
+    background-color: #f4cccc; /* Fondo rosado */
+    padding: 60px 20px; /* Espaciado interno */
+    text-align: center; /* Centra el contenido */
+}
+
+.therapies-title {
+    margin-bottom: 40px; /* Espaciado inferior */
+}
+
+.therapies-title img {
+    max-width: 300px; /* Tamaño máximo */
+    height: auto; /* Mantener proporción */
+}
+
+.therapies-container {
+    display: flex; /* Contenedor flexible */
+    flex-wrap: wrap; /* Permite múltiples filas */
+    gap: 20px; /* Espaciado entre tarjetas */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+.therapy-card {
+    background-color: #eec0c0; /* Fondo de las tarjetas */
+    border-radius: 15px; /* Bordes redondeados */
+    width: 350px; /* Ancho fijo */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efectos suaves */
+}
+
+.therapy-card:hover {
+    transform: scale(1.05); /* Agrandamiento en hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+.therapy-image {
+    width: 100%; /* Ancho completo */
+    height: 300px; /* Altura fija */
+    object-fit: cover; /* Ajusta sin deformar */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 15px; /* Espaciado inferior */
+}
+
+.therapy-card h3 {
+    font-size: 1.4em; /* Tamaño del título */
+    margin-bottom: 10px; /* Espaciado inferior */
+    color: #3e2c2c; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.therapy-card p {
+    font-size: 1em; /* Tamaño del texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #555555; /* Color del texto */
+}
+
+/* ==== SECCIÓN "CONTACTO" ==== */
+.contact-section {
+    background-color: #705151; /* Fondo marrón oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 60px 20px; /* Espaciado interno */
+    text-align: center; /* Centra el contenido */
+}
+
+.contact-title img {
+    max-width: 300px; /* Tamaño máximo del título */
+    height: auto; /* Mantener proporción */
+    margin: 0 auto 20px auto; /* Centrado */
+}
+
+.contact-description {
+    font-size: 1.2em; /* Tamaño del texto */
+    margin-bottom: 30px; /* Espaciado inferior */
+    line-height: 1.8; /* Espaciado entre líneas */
+}
+
+.contact-details {
+    display: flex; /* Contenedor flexible */
+    flex-direction: column; /* Alineación vertical */
+    align-items: center; /* Centrado horizontal */
+    gap: 20px; /* Espaciado entre elementos */
+    margin-bottom: 40px; /* Espaciado inferior */
+}
+
+.contact-item {
+    display: flex; /* Contenedor flexible */
+    align-items: center; /* Alineación vertical */
+    gap: 15px; /* Espaciado entre íconos y texto */
+}
+
+.contact-icon {
+    width: 40px; /* Tamaño del ícono */
+    height: 40px; /* Tamaño del ícono */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.contact-divider {
+    width: 80%; /* Ancho del separador */
+    border: 0.5px solid #ffffff; /* Línea blanca */
+    margin: 20px auto; /* Centrado y espacio vertical */
+}
+
+.contact-map iframe {
+    border-radius: 10px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+}
+
+/* ==== BOTÓN DE COPIAR CORREO ==== */
+.copy-button {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de mano */
+    margin-left: 5px; /* Espaciado lateral */
+}
+
+.copy-icon {
+    width: 20px; /* Tamaño del ícono */
+    height: 20px; /* Tamaño del ícono */
+}
+
+/* ==== ENLACE DE WHATSAPP ==== */
+.whatsapp-link {
+    display: flex; /* Contenedor flexible */
+    align-items: center; /* Alineación vertical */
+    gap: 15px; /* Espaciado entre ícono y texto */
+    text-decoration: none; /* Sin subrayado */
+    color: #ffffff; /* Texto blanco */
+}
+
+.whatsapp-link:hover {
+    text-decoration: underline; /* Subrayado en hover */
+}
+
+/* ==== BOTÓN FLOTANTE DE WHATSAPP ==== */
+.whatsapp-button {
+    position: fixed; /* Botón fijo en la pantalla */
+    bottom: 20px; /* Distancia desde el borde inferior */
+    right: 20px; /* Distancia desde el borde derecho */
+    z-index: 1000; /* Siempre por encima de otros elementos */
+    width: 60px; /* Tamaño del botón */
+    height: 60px; /* Tamaño del botón */
+    border-radius: 50%; /* Botón redondo */
+    background-color: #25d366; /* Color verde de WhatsApp */
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+.whatsapp-button img {
+    width: 70%; /* Tamaño del ícono */
+    height: 70%; /* Tamaño del ícono */
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1); /* Agranda el botón en hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+/* ==== MAPA INTERACTIVO ==== */
+.interactive-map {
+    width: 100%; /* Ancho completo */
+    height: 400px; /* Altura fija del mapa */
+    margin: 20px 0; /* Espaciado superior e inferior */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el contenido sobrante */
+}
+
+.contact-section .interactive-map {
+    width: 80%; /* Ancho reducido dentro de la sección */
+    height: 400px; /* Altura fija */
+    margin: 20px 0; /* Espaciado superior e inferior */
+    border-radius: 10px; /* Bordes redondeados */
+    z-index: 1; /* Asegura el nivel correcto */
+    position: relative; /* Posicionamiento relativo */
+}
+
+/* ==== FOOTER ==== */
+.footer {
+    background-color: #3e2c2c; /* Fondo marrón oscuro */
+    color: #ffffff; /* Texto blanco */
+    text-align: center; /* Texto centrado */
+    padding: 40px 20px; /* Espaciado interno */
+    font-size: 1em; /* Tamaño del texto */
+    line-height: 1.8; /* Espaciado entre líneas */
+    position: relative; /* Posicionamiento relativo */
+}
+
+.footer p {
+    margin: 10px 0; /* Espaciado entre líneas */
+}
+
+.footer .designer {
+    color: #ffcc00; /* Color amarillo */
+    font-weight: bold; /* Texto en negrita */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+.footer .designer:hover {
+    color: #ffffff; /* Cambia a blanco en hover */
+    text-decoration: underline; /* Subrayado en hover */
+}
+
+.footer-divider {
+    width: 60%; /* Ancho del separador */
+    height: 1px; /* Altura del separador */
+    background-color: #ffcc00; /* Color amarillo */
+    margin: 20px auto; /* Centrado */
+}
+
+/* ==== REDES SOCIALES ==== */
+.footer-socials {
+    display: flex; /* Contenedor flexible */
+    justify-content: center; /* Centrado horizontal */
+    gap: 15px; /* Espaciado entre íconos */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+.footer-socials a {
+    text-decoration: none; /* Sin subrayado */
+    color: #ffcc00; /* Color amarillo */
+    font-size: 1.5rem; /* Tamaño de los íconos */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.footer-socials a:hover {
+    color: #ffffff; /* Cambia a blanco en hover */
+    transform: scale(1.2); /* Agranda el ícono en hover */
+}
+
+/* ==== ANIMACIÓN DE RESALTADO ==== */
+.highlighted {
+    animation: highlight 1s ease-out; /* Animación para resaltar */
+}
+
+@keyframes highlight {
+    0% {
+        background-color: #fff0f0; /* Fondo inicial */
+    }
+    100% {
+        background-color: transparent; /* Fondo final */
+    }
+}
+
+
+/* ==== MENÚ HAMBURGUESA ==== */
+#hamburger-menu {
+    display: none; /* Oculto por defecto */
+    flex-direction: column; /* Alineación vertical */
+    justify-content: space-around; /* Espaciado uniforme */
+    width: 30px; /* Ancho del botón */
+    height: 35px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+#hamburger-menu .bar {
+    height: 3px; /* Altura de las líneas */
+    width: 100%; /* Ancho completo */
+    background-color: #333; /* Color de las líneas */
+    border-radius: 2px; /* Bordes redondeados */
+}
+
+/* Estilos para el menú desplegable */
+.nav-menu {
+    display: flex; /* Visible en pantallas grandes */
+    gap: 20px;
+    transition: all 0.3s ease; /* Animación suave */
+}
+
+.nav-menu.hidden {
+    display: none; /* Oculta el menú */
+}
+
+.nav-menu.mobile {
+    display: flex; /* Muestra el menú en móvil */
+    flex-direction: column; /* Alineación vertical */
+    position: absolute; /* Posicionamiento sobre la pantalla */
+    top: 60px; /* Debajo del navbar */
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 200px;
+    background-color: #eec0c0; /* Fondo blanco */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1000; /* Asegura que esté encima */
+}
+
+.nav-menu.mobile li a {
+    padding: 5px; /* Espaciado adicional */
+    color: #423a3a; /* Color del texto */
+    text-align: center; /* Centrado */
+    border-bottom: 1px solid #ccc; /* Separador */
+    
+}
+
+/* ==== ESTILOS RESPONSIVOS ==== */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column; /* Navbar en vertical */
+        align-items: flex-start; /* Elementos alineados al inicio */
+    }
+
+    #hamburger-menu {
+        display: flex; /* Muestra el menú hamburguesa */
+    }
+
+    .nav-menu {
+        display: none; /* Oculta el menú por defecto */
+    }
+
+    .nav-menu.mobile {
+        display: flex; /* Despliega el menú al activarse */
+    }
+
+    .header-content h1 {
+        font-size: 2rem; /* Reduce el tamaño del título */
+    }
+
+    .header-content .subtitle {
+        font-size: 1rem; /* Reduce el tamaño del subtítulo */
+    }
+
+    .header-content .cta-button {
+        padding: 10px 20px; /* Botón más compacto */
+        font-size: 0.9rem; /* Texto más pequeño */
+    }
+
+    .about-content {
+        flex-direction: column; /* Contenido apilado */
+        align-items: center; /* Centrado horizontal */
+    }
+
+    .about-photo-container {
+        margin-bottom: 20px; /* Espaciado entre imagen y texto */
+    }
+
+    .therapies-container {
+        flex-direction: column; /* Apila las tarjetas */
+        gap: 30px; /* Espaciado entre tarjetas */
+    }
+
+    .therapy-card {
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    .contact-details {
+        flex-direction: column; /* Apila los detalles de contacto */
+        gap: 10px; /* Espaciado reducido */
+    }
+}
+
+
+/* Personalizar la barra de scroll (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 15px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background: #ffefef; /* Fondo del track (canal) de la barra */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #eec0c0; /* Color del pulgar (thumb) */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 2px solid #f4cccc; /* Espacio entre el pulgar y el canal */
+}
+
+/* Personalización para navegadores que soportan scroll nativo (Firefox) */
+body {
+    scrollbar-width: thin; /* Grosor de la barra */
+    scrollbar-color: #eec0c0 #f4cccc; /* Pulgar y fondo */
+}
