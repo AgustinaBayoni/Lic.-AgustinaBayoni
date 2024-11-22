@@ -17,7 +17,7 @@ main {
 
 /* ==== HEADER ==== */
 header {
-    background-image: url('fondoHeader.jpg'); /* Imagen de fondo del header */
+    background-image: url('fondoHeader.jpg');
     background-size: cover; /* Ajusta la imagen para cubrir todo */
     background-position: center; /* Centra la imagen */
     background-attachment: fixed; /* Imagen fija para efecto parallax */
